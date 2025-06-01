@@ -1,12 +1,30 @@
-# React + Vite
+## 🚀 Project Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Responsive Login Page UI (based on provided design)
+- API Integration with `https://dummyjson.com/auth/login`
+- Axios Interceptor for API calls
+- Form validation
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ReactJS (with Vite or Create React App)
+- Axios for API requests
+- TailwindCSS
+- Git & GitHub for version control
 
-## Expanding the ESLint configuration
+## 🔁 Dummy API Info
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Endpoint:**  
+`POST https://dummyjson.com/auth/login`
+
+**Request Body:**
+```json
+{
+  "username": "emilys",
+  "password": "emilyspass",
+  "expiresInMins": 30
+}
+```
+
+**Expected Response:**
+- A mock token and user info if credentials are valid.
