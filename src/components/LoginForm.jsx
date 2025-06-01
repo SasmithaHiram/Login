@@ -5,9 +5,13 @@ const LoginForm = () => {
   const [lastName, setlastName] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [sucess, setSuccess] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError("");
+    setSuccess("");
 
     const formData = { firstName, lastName, userName, password };
     console.log(formData);
