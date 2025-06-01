@@ -1,7 +1,3 @@
-# 🔐 ZephyraTech Login Page – Full Stack Developer Internship Task
-
-Welcome to the login page project built for the Full Stack Developer Internship assignment at **ZephyraTech Solutions**. This project is developed using **ReactJS** and includes API authentication with **interceptors**, structured Git workflow, and responsive UI based on the provided design.
-
 ## 🚀 Project Features
 
 - Responsive Login Page UI (based on provided design)
