@@ -1,4 +1,11 @@
+import { useState } from "react";
+
 const LoginForm = () => {
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <>
       <div className="min-h-screen flex items-center justify-center bg-white px-4">
@@ -19,6 +26,8 @@ const LoginForm = () => {
                 type="text"
                 id="firstName"
                 name="firstName"
+                value={firstName}
+                onChange={(e) => setfirstName(e.target.value)}
                 placeholder="Emily"
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
               />
@@ -35,6 +44,8 @@ const LoginForm = () => {
                 type="text"
                 id="lastName"
                 name="lastName"
+                value={lastName}
+                onChange={(e) => setlastName(e.target.value)}
                 placeholder="Johnson"
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
               />
@@ -52,6 +63,8 @@ const LoginForm = () => {
                 id="username"
                 name="username"
                 placeholder="emilys"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
               />
             </div>
@@ -68,6 +81,8 @@ const LoginForm = () => {
                 id="password"
                 name="password"
                 placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
               />
             </div>
