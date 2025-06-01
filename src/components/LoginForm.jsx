@@ -9,25 +9,25 @@ const LoginForm = () => {
   const [error, setError] = useState("");
   const [sucess, setSuccess] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
 
     try {
-      const response = awit axiosInstance.post("/auth/login", {
+      const response = await axiosInstance.post("/auth/login", {
         username: userName,
         password: password,
-        expiresInMins: 30
+        expiresInMins: 30,
       });
 
+      alert(`Welcome ${response.data.firstName}!`);
       setSuccess(`Welcome ${response.data.firstName}!`);
-      console.log("Login successful: ",response.data);
-      
+      console.log("Login successful: ", response.data);
     } catch (error) {
+      alert("Invalid username or password");
       setError("Invalid username or password");
-      console.error("Login Error",error)
-      
+      console.error("Login Error", error);
     }
 
     const formData = { firstName, lastName, userName, password };
