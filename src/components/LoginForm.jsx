@@ -6,10 +6,20 @@ const LoginForm = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = { firstName, lastName, userName, password };
+    console.log(formData);
+  };
+
   return (
     <>
       <div className="min-h-screen flex items-center justify-center bg-white px-4">
-        <form className="bg-white shadow-2xl border border-gray-100 rounded-2xl p-10 w-full max-w-md">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white shadow-2xl border border-gray-100 rounded-2xl p-10 w-full max-w-md"
+        >
           <h1 className="text-3xl font-bold text-gray-800 text-center mb-8">
             Login to Your Account
           </h1>
