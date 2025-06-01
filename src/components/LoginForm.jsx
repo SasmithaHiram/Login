@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axiosInstance from "../api/axiosInstance";
 import { loginSchema } from "../validations/zod";
+import { fi } from "zod/v4/locales";
 
 const LoginForm = () => {
   const [firstName, setfirstName] = useState("");
@@ -14,6 +15,14 @@ const LoginForm = () => {
     e.preventDefault();
     setError("");
     setSuccess("");
+
+    const formData = { firstName, lastName, userName, password };
+
+    if (!firstName || !lastName || !userName || !password) {
+      setError("All fields are required");
+      alert("All fields are required");
+      return;
+    }
 
     try {
       const response = await axiosInstance.post("/auth/login", {
@@ -31,7 +40,6 @@ const LoginForm = () => {
       console.error("Login Error", error);
     }
 
-    const formData = { firstName, lastName, userName, password };
     console.log(formData);
   };
 
