@@ -13,6 +13,10 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setfirstName("");
+    setlastName("");
+    setUserName("");
+    setPassword("");
     setError("");
     setSuccess("");
 
@@ -39,8 +43,6 @@ const LoginForm = () => {
       setError("Invalid username or password");
       console.error("Login Error", error);
     }
-
-    console.log(formData);
   };
 
   return (
