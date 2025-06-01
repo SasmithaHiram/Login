@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axiosInstance from "../api/axiosInstance";
 
 const LoginForm = () => {
   const [firstName, setfirstName] = useState("");
@@ -12,6 +13,22 @@ const LoginForm = () => {
     e.preventDefault();
     setError("");
     setSuccess("");
+
+    try {
+      const response = awit axiosInstance.post("/auth/login", {
+        username: userName,
+        password: password,
+        expiresInMins: 30
+      });
+
+      setSuccess(`Welcome ${response.data.firstName}!`);
+      console.log("Login successful: ",response.data);
+      
+    } catch (error) {
+      setError("Invalid username or password");
+      console.error("Login Error",error)
+      
+    }
 
     const formData = { firstName, lastName, userName, password };
     console.log(formData);
